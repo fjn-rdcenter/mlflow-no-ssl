@@ -148,6 +148,7 @@ def _cached_get_request_session(
         max_retries=retry,
     )
     session = requests.Session()
+    session.verify = False
     session.mount("https://", adapter)
     session.mount("http://", adapter)
     return session
