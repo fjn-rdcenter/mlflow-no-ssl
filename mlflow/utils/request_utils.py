@@ -149,6 +149,7 @@ def _cached_get_request_session(
     )
     session = requests.Session()
     session.verify = False
+    session.trust_env = False
     session.mount("https://", adapter)
     session.mount("http://", adapter)
     return session
